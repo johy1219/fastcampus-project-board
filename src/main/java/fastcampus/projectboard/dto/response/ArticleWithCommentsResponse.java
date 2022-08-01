@@ -1,9 +1,6 @@
 package fastcampus.projectboard.dto.response;
 
-import fastcampus.projectboard.domain.Article;
-import fastcampus.projectboard.dto.ArticleCommentDto;
 import fastcampus.projectboard.dto.ArticleWithCommentsDto;
-import fastcampus.projectboard.dto.UserAccountDto;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -13,7 +10,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Data
-public class ArticleWithCommentResponse implements Serializable {
+public class ArticleWithCommentsResponse implements Serializable {
 
     private final Long id;
     private final String title;
@@ -24,17 +21,17 @@ public class ArticleWithCommentResponse implements Serializable {
     private final String nickname;
     private final Set<ArticleCommentResponse> articleCommentResponses;
 
-    public static ArticleWithCommentResponse of(Long id, String title, String content, String hashtag, LocalDateTime createdAt, String email, String nickname, Set<ArticleCommentResponse> articleCommentResponses) {
-        return new ArticleWithCommentResponse(id, title, content, hashtag, createdAt, email, nickname, articleCommentResponses);
+    public static ArticleWithCommentsResponse of(Long id, String title, String content, String hashtag, LocalDateTime createdAt, String email, String nickname, Set<ArticleCommentResponse> articleCommentResponses) {
+        return new ArticleWithCommentsResponse(id, title, content, hashtag, createdAt, email, nickname, articleCommentResponses);
     }
 
-    public static ArticleWithCommentResponse from(ArticleWithCommentsDto dto) {
+    public static ArticleWithCommentsResponse from(ArticleWithCommentsDto dto) {
         String nickname = dto.getUserAccountDto().getNickname();
         if (nickname == null || nickname.isBlank()) {
             nickname = dto.getUserAccountDto().getUserId();
         }
 
-        return new ArticleWithCommentResponse(
+        return new ArticleWithCommentsResponse(
                 dto.getId(),
                 dto.getTitle(),
                 dto.getContent(),
