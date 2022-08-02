@@ -30,5 +30,4 @@ class MainControllerTest {
                 .andExpect(MockMvcResultMatchers.forwardedUrl("/articles"))
                 .andDo(MockMvcResultHandlers.print());
     }
-
 }
