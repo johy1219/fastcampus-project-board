@@ -66,6 +66,7 @@ class ArticleCommentServiceTest {
         then(articleRepository).should().getReferenceById(dto.getArticleId());
         then(articleCommentRepository).should().save(ArgumentMatchers.any(ArticleComment.class));
     }
+
     @DisplayName("댓글 저장을 시도했는데 맞는 게시글이 없으면, 경고 로그를 찍고 아무것도 안 한다.")
     @Test
     void givenNonexistentArticle_whenSavingArticleComment_thenLogsSituationAndDoesNothing() {
@@ -184,4 +185,5 @@ class ArticleCommentServiceTest {
                 "#java"
         );
     }
+
 }
