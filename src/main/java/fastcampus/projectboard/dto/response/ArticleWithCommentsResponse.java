@@ -3,14 +3,13 @@ package fastcampus.projectboard.dto.response;
 import fastcampus.projectboard.dto.ArticleWithCommentsDto;
 import lombok.Data;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 @Data
-public class ArticleWithCommentsResponse implements Serializable {
+public class ArticleWithCommentsResponse {
 
     private final Long id;
     private final String title;

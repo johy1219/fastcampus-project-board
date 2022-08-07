@@ -3,11 +3,10 @@ package fastcampus.projectboard.dto.response;
 import fastcampus.projectboard.dto.ArticleDto;
 import lombok.Data;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Data
-public class ArticleResponse implements Serializable {
+public class ArticleResponse{
     private final Long id;
     private final String title;
     private final String content;
